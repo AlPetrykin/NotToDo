@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Header from "./components/Header";
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
+import { ReduxProvider } from "@/redux/provider/ReduxProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const firaCode = Fira_Code({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "700"], // или другие, например: ["300", "400", "500", "600", "700"]
+  variable: "--font-fira-code", // можно использовать с Tailwind
 });
 
 export const metadata: Metadata = {
@@ -25,9 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${firaCode.variable} antialiased h-full`}
       >
-        {children}
+        <Header />
+        <ReduxProvider>
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
