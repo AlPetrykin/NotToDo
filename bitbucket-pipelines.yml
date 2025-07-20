@@ -1,0 +1,13 @@
+image: node:18
+
+pipelines:
+  default:
+    - step:
+        name: Build Next.js
+        caches:
+          - node
+        script:
+          - echo "🔧 Installing dependencies..."
+          - npm install
+          - echo "🛠 Building Next.js..."
+          - npm run build
