@@ -3,15 +3,16 @@ import { NextResponse } from "next/server";
 import { auth0 } from "@/lib/auth0";
 import { ObjectId } from "mongodb";
 
+
 export async function PATCH(
-  req: Request,
-  { params }: { params: { id: string } }
+  req: Request
 ) {
   try {
     const session = await auth0.getSession();
     const userId = session?.user?.sub;
     
-    const { id } = params;
+    const url = new URL(req.url);
+    const id = url.pathname.split("/").pop();
     const updates = await req.json();
 
     const client = await clientPromise;
@@ -35,15 +36,19 @@ export async function PATCH(
   }
 }
 
-export async function DELETE(
-  _: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(req: Request) {
   try {
     const session = await auth0.getSession();
     const userId = session?.user?.sub;
 
-    const { id } = params;
+    const url = new URL(req.url);
+    const id = url.pathname.split("/").pop();
+
+    console.log(id);
+
+    if (!id) {
+      return NextResponse.json({ error: "Missing ID" }, { status: 400 });
+    }
 
     const client = await clientPromise;
     const db = client.db("NotToDos");
@@ -54,7 +59,10 @@ export async function DELETE(
     });
 
     if (result.deletedCount === 0) {
-      return NextResponse.json({ error: "Task not found" }, { status: 404 });
+      return NextResponse.json(
+        { error: "Task not found " + id },
+        { status: 404 }
+      );
     }
 
     return NextResponse.json({ success: true });

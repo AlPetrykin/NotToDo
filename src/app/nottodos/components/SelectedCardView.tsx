@@ -16,7 +16,7 @@ export default function SelectedCardView({ card, onClose }: Props) {
     const handleStatusChange = async (status: NotToDoStatus) => {
         try {
             await updateTask({ id: card.id, status }).unwrap();
-            onClose(); // закрываем карточку после перемещения
+            onClose();
         } catch (err) {
             console.error("Failed to update status:", err);
         }
@@ -25,7 +25,7 @@ export default function SelectedCardView({ card, onClose }: Props) {
     const handleDelete = async () => {
         try {
             await deleteTask(card.id).unwrap();
-            onClose(); // закрываем карточку после удаления
+            onClose(); 
         } catch (err) {
             console.error("Failed to delete task:", err);
         }
