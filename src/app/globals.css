@@ -2,12 +2,12 @@
 @import "tailwindcss-animated";
 
 :root {
-  --background: #f6f7f9;
-  --foreground: #323a45;
+  --background: #f0fafb;
+  --foreground: #152c37;
   --primary: #6cc2d2;
-  --accent: #40e0d0;
-  --text: #3f6184;
-  --muted: #778899;
+  --accent: #3292a8;
+  --text: #2a6174;
+  --muted: #d9f1f4;
 }
 
 @theme inline {
@@ -19,8 +19,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f6f7f9;
-    --foreground: #323a45;
+    --background: #f0fafb;
+    --foreground: #152c37;
   }
 }
 
