@@ -46,7 +46,7 @@ export default function AddNotToDoForm({ onCreate, onClose }: Props) {
             className="bg-white border p-4 rounded-xl shadow-md mb-6 flex flex-col gap-3 max-w-2xl w-full"
         >
             <div className="flex flex-row justify-between">
-                <h2 className="text-lg font-bold text-[#323a45]">Add New NotToDo</h2>
+                <h2 className="text-lg font-bold text-(--foreground)">Add New NotToDo</h2>
                 <label onClick={onClose} className="cursor-pointer text-sm text-red-600">Close ❌</label>
             </div>
 
