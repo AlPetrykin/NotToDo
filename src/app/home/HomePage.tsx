@@ -25,13 +25,14 @@ export default function Home() {
                 <h1 className="text-6xl font-bold text-[#152c37] tracking-tight mb-6 animate-delay-100 animation-duration-400 animate-fade-right">Progress begins with refusal</h1>
                 <div className="mt-4 text-lg text-(--text) mx-auto max-w-2xl text-center animate-delay-200 animation-duration-400 animate-fade-right">Every great habit starts with dropping a bad one. Log your NotToDos and stay intentional.</div>
                 <div className="mt-6 animate-delay-300 animate-fade-right animation-duration-400">
-                    <Link href="/auth/login" className="hover:scale-[1.1] inline-block px-6 py-3 bg-(--primary) text-white font-semibold rounded-lg hover:bg-(--text) transition">
+                    <Link href="/nottodos" className="hover:scale-[1.1] inline-block px-6 py-3 bg-(--primary) text-white font-semibold rounded-lg hover:bg-(--text) transition">
                         Log your first NotToDo
                     </Link>
                 </div>
                 <Image width={512} height={512} src="/images/not-to-do-logo.png" alt="logo" className="bg-transparent mx-auto animate-delay-400 animate-fade-right animation-duration-400" />
 
             </div>
+
             <div ref={listOfRef} className="flex flex-col gap-4 justify-center w-full items-center">
                 <h1 className="text-6xl text-center font-bold text-(--foreground) tracking-tight mb-6 animate-delay-100 animation-duration-400 animate-fade-right">What you&apos;re can do?</h1>
                 <div className="grid w-fit md:grid-cols-2 grid-cols-1 gap-6 max-w-6xl">

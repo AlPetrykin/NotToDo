@@ -14,11 +14,11 @@ export default async function Header() {
             <div className=" flex flex-row content-end justify-end">
                 {!session ? (
                     <div className="flex flex-row gap-4 items-center">
-                        <a href="/auth/login" className="text-(--primary)  cursor-pointer hover:scale-[1.1] hover:text-(--accent) transition duration-200 py-3 px-6 font-bold rounded-2xl">Sign In</a>
-                        <a href="/auth/login?screen_hint=signup" className="h-fit shadow-lg text-white bg-(--primary) cursor-pointer hover:scale-[1.1] hover:bg-(--accent) transition duration-200 py-3 px-6 font-bold rounded-2xl">Sign Up</a>
+                        <a href="/auth/login" className="text-(--primary)  cursor-pointer hover:scale-[1.1] hover:text-(--accent) transition duration-200 py-3 px-6 font-bold rounded-md">Sign In</a>
+                        <a href="/auth/login?screen_hint=signup" className="h-fit shadow-lg text-white bg-(--primary) cursor-pointer hover:scale-[1.1] hover:bg-(--accent) transition duration-200 py-3 px-6 font-bold rounded-md">Sign Up</a>
                     </div>
                 ) : (
-                    <a href="/auth/logout" className="shadow-lg h-fit text-(--white) bg-(--primary)  cursor-pointer hover:scale-[1.1] hover:bg-(--accent) transition duration-200 py-3 px-6 font-bold rounded-2xl">Logout</a>
+                    <a href="/auth/logout" className="shadow-lg h-fit text-(--white) bg-(--primary)  cursor-pointer hover:scale-[1.1] hover:bg-(--accent) transition duration-200 py-3 px-6 font-bold rounded-md">Logout</a>
                 )}
             </div>
         </div>
