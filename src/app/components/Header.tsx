@@ -10,7 +10,7 @@ export default async function Header() {
 
     return (
         <div className="flex z-10 fixed shadow-lg flex-row justify-between bg-(--background) w-full p-4">
-            <Image width={140} height={120} src="/images/no-to-do-hor.png" alt="logo" />
+            <Image width={100} height={80} src="/images/logo-svg.svg" alt="logo" />
             <div className=" flex flex-row content-end justify-end">
                 {!session ? (
                     <div className="flex flex-row gap-4 items-center">
