@@ -90,7 +90,7 @@ export default function Home() {
                                 fill="url(#gradient)"
                             />
                         </svg>
-                        <Link href="/nottodos" className="cursor-pointer flex flex-col gap-4 group">
+                        <Link href="/auth/login" className="cursor-pointer flex flex-col gap-4 group">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
