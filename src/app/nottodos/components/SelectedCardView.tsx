@@ -32,15 +32,15 @@ export default function SelectedCardView({ card, onClose }: Props) {
     };
 
     return (
-        <div className="p-6 rounded-xl bg-white shadow-md border border-gray-200 w-full max-w-2xl mx-auto">
+        <div className="p-6 rounded-xl bg-(--bg-soft) shadow-md border border-gray-200 w-full max-w-2xl mx-auto">
             <div className="flex flex-row justify-between">
-                <h2 className="text-2xl font-bold text-[#323a45] mb-2">{card.title}</h2>
+                <h2 className="text-2xl font-bold text-(--foreground) mb-2">{card.title}</h2>
                 <label onClick={onClose} className="cursor-pointer text-sm text-red-600">Close ❌</label>
             </div>
-            <p className="text-md text-[#3f6184] mb-4 italic">{card.reason || "No reason provided"}</p>
+            <p className="text-md text-(--text) mb-4 italic">{card.reason || "No reason provided"}</p>
 
             <div className="flex items-center gap-2 mb-4">
-                <span className={`text-sm text-[#3f6184] px-3 py-1 rounded-full border capitalize 
+                <span className={`text-sm text-(--background) px-3 py-1 rounded-full border capitalize 
                     ${card.status === "to_avoid"
                         ? "bg-green-100  border-green-300"
                         : card.status === "avoided"
@@ -57,9 +57,9 @@ export default function SelectedCardView({ card, onClose }: Props) {
             </div>
 
             <div className="flex gap-3 mb-6 text-center items-center">
-                <label className="text-sm text-gray-600">Move to:</label>
+                <label className="text-sm text-(--text)">Move to:</label>
                 <select
-                    className={`rounded-md border px-3 py-1 text-sm focus:outline-none focus:ring-2 
+                    className={`rounded-md  border px-3 py-1 text-sm focus:outline-none focus:ring-2 
                         ${card.status === "to_avoid"
                             ? "bg-green-100 text-green-800 border-green-300 focus:ring-green-400"
                             : card.status === "avoided"

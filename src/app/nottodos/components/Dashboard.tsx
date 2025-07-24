@@ -61,23 +61,35 @@ export default function Home() {
     return (
         <div className="flex flex-col gap-8 pt-30">
             <div className="flex md:flex-row flex-col justify-between text-center items-center px-6">
-                <div>
-                    <label className="text-sm text-gray-600">Filter by: </label>
+                <div className=" relative">
                     <select
-                        className="rounded-md border border-gray-300 px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-[#40e0d0]"
+                        id="select_status"
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value)}
+                        className="shadow-2xs peer block appearance-none bg-(--background) border border-gray-300 px-8 pt-4 pb-2.5 text-sm text-(--text) rounded-md focus:outline-none focus:ring-0 focus:border-(--accent)"
                     >
                         <option value="date_down">Date ↓</option>
                         <option value="date_up">Date ↑</option>
                         <option value="fromAToZ">A-Z ↓</option>
                         <option value="fromZToA">Z-A ↑</option>
                     </select>
+
+                    <label
+                        htmlFor="select_status"
+                        className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-2 origin-[0] bg-(--background) px-4 
+                peer-focus:px-2 peer-focus:text-(--accent) 
+                peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 
+                peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 
+                rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                    >
+                        Filter by
+                    </label>
                 </div>
-                <button onClick={() => handleAddNew()} className="w-fit h-fit shadow-lg text-white bg-(--primary) cursor-pointer hover:scale-[1.1] hover:bg-(--text) transition duration-200 py-3 px-6 font-bold rounded-2xl">
-                    ➕ Add New Card
+                <button onClick={() => handleAddNew()} className="w-fit h-fit shadow-lg text-(--background) bg-(--accent) cursor-pointer hover:scale-[1.1] hover:bg-(--primary) transition duration-200 py-3 px-6 font-bold rounded-md">
+                    + Add New Card
                 </button>
             </div>
+
 
             <div className="h-[100vh] flex flex-row  transition duration-1000">
                 <div className={`grid grid-cols-3 gap-6  overflow-y-auto  h-full duration-500 transition-[width] animation-duration-1000 ${selectedCard || isAddFunc ? "md:w-[66%] md:p-4 w-0 p-0" : "w-full p-4"}`}>

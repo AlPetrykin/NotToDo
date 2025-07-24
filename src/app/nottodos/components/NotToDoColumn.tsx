@@ -12,8 +12,8 @@ type Props = {
 
 export default function NotToDoColumn({ title, items, onSelect, selectedId }: Props) {
   return (
-    <div className="flex flex-col gap-4 p-4 bg-(--primary) rounded-2xl">
-      <h2 className="text-xl font-bold text-[#f6f7f9] mb-2">{title}</h2>
+    <div className="flex flex-col gap-4 p-4 bg-(--bg-soft) rounded-2xl">
+      <h2 className="text-xl font-bold text-(--accent) mb-2">{title}</h2>
       <div className="flex flex-col gap-3">
         {items.map((item) => (
           <NotToDoCard
@@ -24,7 +24,7 @@ export default function NotToDoColumn({ title, items, onSelect, selectedId }: Pr
           />
         ))}
         {items.length === 0 && (
-          <p className="text-xl text-center text-[#f6f7f9] italic">Congratulations! This form is empty, you don&apos;t have any {title}, or you still didn&apos;t add some...</p>
+          <p className="text-xl text-center text-(--text) italic">Congratulations! This form is empty, you don&apos;t have any {title}, or you still didn&apos;t add some...</p>
         )}
       </div>
     </div>

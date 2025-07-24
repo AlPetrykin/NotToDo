@@ -10,15 +10,15 @@ export default async function Header() {
 
     return (
         <div className="flex z-10 fixed shadow-lg flex-row justify-between bg-(--background) w-full p-4">
-            <Image width={140} height={120} src="/images/no-to-do-hor.png" alt="logo" />
+            <Image width={100} height={80} src="/images/logo-svg.svg" alt="logo" />
             <div className=" flex flex-row content-end justify-end">
                 {!session ? (
                     <div className="flex flex-row gap-4 items-center">
-                        <a href="/auth/login" className="text-(--primary)  cursor-pointer hover:scale-[1.1] hover:text-(--text) transition duration-200 py-3 px-6 font-bold rounded-2xl">Sign In</a>
-                        <a href="/auth/login?screen_hint=signup" className="h-fit shadow-lg text-white bg-(--primary) cursor-pointer hover:scale-[1.1] hover:bg-(--text) transition duration-200 py-3 px-6 font-bold rounded-2xl">Sign Up</a>
+                        <a href="/auth/login" className="text-(--primary)  cursor-pointer hover:scale-[1.1] hover:text-(--accent) transition duration-200 py-3 px-6 font-bold rounded-md">Sign In</a>
+                        <a href="/auth/login?screen_hint=signup" className="h-fit shadow-lg text-(--background) bg-(--accent) cursor-pointer hover:scale-[1.1] hover:bg-(--primary) transition duration-200 py-3 px-6 font-bold rounded-md">Sign Up</a>
                     </div>
                 ) : (
-                    <a href="/auth/logout" className="shadow-lg h-fit text-(--foreground) bg-(--primary)  cursor-pointer hover:scale-[1.1] hover:bg-(--text) transition duration-200 py-3 px-6 font-bold rounded-2xl">Logout</a>
+                    <a href="/auth/logout" className="shadow-lg h-fit text-(--background) bg-(--accent)  cursor-pointer hover:scale-[1.1] hover:bg-(--primary) transition duration-200 py-3 px-6 font-bold rounded-md">Logout</a>
                 )}
             </div>
         </div>
