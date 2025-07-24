@@ -66,7 +66,7 @@ export default function Home() {
                         id="select_status"
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value)}
-                        className="shadow-2xs peer block appearance-none bg-transparent border border-gray-300 px-8 pt-4 pb-2.5 text-sm text-(--text) rounded-md focus:outline-none focus:ring-0 focus:border-(--accent)"
+                        className="shadow-2xs peer block appearance-none bg-(--background) border border-gray-300 px-8 pt-4 pb-2.5 text-sm text-(--text) rounded-md focus:outline-none focus:ring-0 focus:border-(--accent)"
                     >
                         <option value="date_down">Date ↓</option>
                         <option value="date_up">Date ↑</option>
@@ -76,7 +76,7 @@ export default function Home() {
 
                     <label
                         htmlFor="select_status"
-                        className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-(--background) px-4 
+                        className="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-2 origin-[0] bg-(--background) px-4 
                 peer-focus:px-2 peer-focus:text-(--accent) 
                 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 
                 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 
@@ -85,7 +85,7 @@ export default function Home() {
                         Filter by
                     </label>
                 </div>
-                <button onClick={() => handleAddNew()} className="w-fit h-fit shadow-lg text-white bg-(--primary) cursor-pointer hover:scale-[1.1] hover:bg-(--text) transition duration-200 py-3 px-6 font-bold rounded-md">
+                <button onClick={() => handleAddNew()} className="w-fit h-fit shadow-lg text-(--background) bg-(--accent) cursor-pointer hover:scale-[1.1] hover:bg-(--primary) transition duration-200 py-3 px-6 font-bold rounded-md">
                     + Add New Card
                 </button>
             </div>
