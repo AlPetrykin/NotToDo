@@ -12,7 +12,7 @@ export default function NotToDoCard({ item, isSelected, onClick }: Props) {
     return (
         <div
             onClick={onClick}
-            className={`cursor-pointer rounded-xl p-4 shadow-xl transition hover:scale-[1.02] hover:bg-[#ffffff] duration-300 hover:shadow-md ${isSelected ? "border-(--accent) bg-(--primary)" : " bg-(--background)"}`}
+            className={`cursor-pointer rounded-xl p-4 shadow-xl transition hover:scale-[1.02] hover:bg-(--bg-card) duration-300 hover:shadow-md ${isSelected ? "border-(--accent) bg-(--blue)" : " bg-(--bg-card)"}`}
         >
             <h3 className="text-lg font-semibold text-(--foreground) select-none">{item.title}</h3>
             {item.reason && (
